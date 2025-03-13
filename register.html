@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrasi</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <form
+      id="loginForm"
+      class="max-w-sm mx-auto flex flex-col h-screen justify-center"
+    >
+      <!-- SUKSES -->
+      <div id="info" class="hidden p-3 bg-sky-500 text-white">
+        <p>Sukses login!</p>
+      </div>
+      <!-- GAGAL -->
+      <div id="fail" class="hidden p-3 bg-sky-500 text-white">
+        <p>Login gagal!</p>
+      </div>
+
+      <div class="bg-white shadow-xl rounded my-10 p-5">
+        <div class="mb-5">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Your email</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@flowbite.com"
+            required
+          />
+        </div>
+        <div class="mb-5">
+          <label
+            for="password"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Your password</label
+          >
+          <input
+            type="password"
+            id="password"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-5">
+          <label
+            for="langganan"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Berlangganan</label
+          >
+          <select
+            id="langganan"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="" class="selected-disable" disabled selected>
+              Pilih
+            </option>
+            <option value="Regular">Regular</option>
+            <option value="Premium">Premium</option>
+          </select>
+        </div>
+        <div class="mb-5" id="pembayaran">
+          <label
+            for="metodePembayaran"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Pembayaran</label
+          >
+          <select
+            id="metodePembayaran"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="" class="selected-disable" disabled selected>
+              Pilih
+            </option>
+            <option value="Transfer">Transfer</option>
+            <option value="E-Wallet">E-Wallet</option>
+          </select>
+        </div>
+        <div class="mb-5" id="e-wallet">
+          <label
+            for="ewalletType"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >E-wallet</label
+          >
+          <select
+            id="ewalletType"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="" class="selected-disable" disabled selected>
+              Pilih
+            </option>
+            <option value="Dana">Dana</option>
+            <option value="BRIMO">BRIMO</option>
+            <option value="Gopay">Gopay</option>
+          </select>
+        </div>
+        <div class="mb-5" id="transfer">
+          <label
+            for="transferType"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Transfer</label
+          >
+          <select
+            id="transferType"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="" class="selected-disable" disabled selected>
+              Pilih
+            </option>
+            <option value="BRI">Bank BRI</option>
+            <option value="BCA">Bank BCA</option>
+            <option value="BSI">Bank BSI</option>
+            <option value="Mandiri">Bank Mandiri</option>
+          </select>
+        </div>
+        <a
+          id="registerButton"
+          href="capthca.html"
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Registrasi
+        </a>
+      </div>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        // Hide payment options initially
+        $("#pembayaran").hide();
+        $("#transfer").hide();
+        $("#e-wallet").hide();
+
+        // Show/hide payment options based on subscription type
+        $("#langganan").change(function () {
+          if ($(this).val() === "Regular") {
+            $("#pembayaran").hide();
+          } else {
+            $("#pembayaran").show();
+          }
+        });
+
+        // Show/hide e-wallet or transfer options based on payment method
+        $("#metodePembayaran").change(function () {
+          if ($(this).val() === "Transfer") {
+            $("#transfer").show();
+            $("#e-wallet").hide();
+          } else if ($(this).val() === "E-Wallet") {
+            $("#e-wallet").show();
+            $("#transfer").hide();
+          } else {
+            $("#transfer").hide();
+            $("#e-wallet").hide();
+          }
+        });
+
+        // Validate form fields
+        function validateForm() {
+          var email = $("#email").val();
+          var password = $("#password").val();
+          var langganan = $("#langganan").val();
+          var pembayaran = $("#metodePembayaran").val();
+          var eWallet = $("#ewalletType").val();
+          var transfer = $("#transferType").val();
+
+          if (
+            email === "" ||
+            password === "" ||
+            langganan === "" ||
+            (pembayaran === "Transfer" && transfer === "") ||
+            (pembayaran === "E-Wallet" && eWallet === "")
+          ) {
+            return false;
+          }
+          return true;
+        }
+
+        // Handle register button click
+        $("#registerButton").click(function (event) {
+          event.preventDefault();
+          if (validateForm()) {
+            window.location.href = "capthca.html";
+          } else {
+            alert("Di Mohon Untuk Mengisi Data Registrasi Terlebih Dahulu.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
